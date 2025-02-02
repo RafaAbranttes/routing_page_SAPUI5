@@ -1,0 +1,19 @@
+<mvc:View
+	controllerName="project1.controller.NotFound"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	displayBlock="true"
+	height="100%"
+	busyIndicatorDelay="0"
+>
+
+	<MessagePage id="_IDGenMessagePage"
+		title="Not Found"
+		text="Not Found"
+		description="Not Found"
+		showNavButton="true"
+		navButtonPress="onNavBack"
+	>
+
+	</MessagePage>
+</mvc:View>

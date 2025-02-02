@@ -1,0 +1,16 @@
+<mvc:View controllerName="project1.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <List id="idList"
+                items="{/Employees}" headerText="{i18n>employees}">
+                <ObjectListItem id="idObjectListItem"
+                    title="{FirstNamee}" type="Active" press="onObjectListItemPress">
+                    <ObjectAttribute id="idObjectAttribute" text="{LastName}" />
+                    <ObjectAttribute id="idObjectAttribute2" text="{Title}" />
+                </ObjectListItem>
+            </List>
+        </content>
+    </Page>
+</mvc:View>
