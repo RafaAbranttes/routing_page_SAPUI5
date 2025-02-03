@@ -12,5 +12,10 @@ sap.ui.define(["project1/controller/Base.controller"], (Controller) => {
         EmployeeID: oCtx.getProperty("EmployeeID"),
       });
     },
+    onNewButtonPress: function (oEvent) {
+      this.getRouter().navTo("RouteEmployeeDetail", {
+        EmployeeID: "New",
+      });
+    }
   });
 });

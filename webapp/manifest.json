@@ -72,6 +72,10 @@
                     "useBatch": true,
                     "defaultUpdateMethod" : "PUT"
                 }
+            }, 
+            "editEmployeeModel" : {
+                "type" : "sap.ui.model.json.JSONModel",
+                "uri": "/model/editEmployee.json"
             }
         },
         "resources": {

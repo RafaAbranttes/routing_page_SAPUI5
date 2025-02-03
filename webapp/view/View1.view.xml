@@ -5,6 +5,17 @@
         <content>
             <List id="idList"
                 items="{/Employees}" headerText="{i18n>employees}">
+                <headerToolbar>
+                    <OverflowToolbar id="_IDGenOverflowToolbar1">
+                        <Title id="_IDGenTitle"
+                            text="Employee" level="H2"> </Title>
+                        <ToolbarSpacer id="_IDGenToolbarSpacer1" />
+                        <Button id="_IDGenButton1"
+                            icon="sap-icon://create" text="New" press="onNewButtonPress"
+                        >
+                        </Button>
+                    </OverflowToolbar>
+                </headerToolbar>
                 <ObjectListItem id="idObjectListItem"
                     title="{FirstNamee}" type="Active" press="onObjectListItemPress">
                     <ObjectAttribute id="idObjectAttribute" text="{LastName}" />

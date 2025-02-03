@@ -1,3 +1,4 @@
+/* eslint-disable comma-dangle */
 sap.ui.define(
   [
     "project1/controller/Base.controller",
@@ -27,18 +28,42 @@ sap.ui.define(
         oArgs = oEvent.getParameter("arguments");
         oView = this.getView();
 
-        oView.bindElement({
-          path: "/Employees(" + oArgs.EmployeeID + ")",
-          events: {
-            change: this._onBindingChange.bind(this),
-            dataRequested: function (oEvent2) {
-              oView.setBusy(true);
+        if (oArgs.EmployeeID !== "New") {
+          oView.bindElement({
+            path: "/Employees(" + oArgs.EmployeeID + ")",
+            events: {
+              change: this._onBindingChange.bind(this),
+              dataRequested: function (oEvent2) {
+                oView.setBusy(true);
+              },
+              dataReceived: function (oEvent3) {
+                oView.setBusy(false);
+              },
             },
-            dataReceived: function (oEvent3) {
-              oView.setBusy(false);
-            },
+          });
+        } else {
+          this._initNewEmployee();
+        }
+      },
+
+      _initNewEmployee: function () {
+        var oModel = this.getView().getModel();
+
+        oModel.setDeferredGroups(["createEmployeeID"]);
+        oModel.setChangeGroups({
+          EmployeeID: {
+            groupId: "createEmployeeID",
+            changeSetId: "ID",
           },
         });
+
+        var oContext = oModel.createEntry("/Employees", {
+          groupId: "createEmployeeID",
+          Properties: {},
+        });
+
+        var oView = this.getView();
+        oView.bindElement(oContext.getPath());
       },
 
       _onBindingChange: function (oEvent) {
@@ -103,6 +128,37 @@ sap.ui.define(
           }
         }
       },
+
+      onButtonPressDelete: function (oEvent) {
+        var oModel = this.getView().getModel(),
+          oContext = this.getview().getBindingContext(),
+          that = this;
+
+        MessageBox.warning("O Registro será excluído! Deseja continuar?", {
+          actions: [MessageBox.Action.OK, MessageBox.Action.CANCEL],
+          onClose: function (sAction) {
+            if (sAction == MessageBox.Action.OK) {
+              oModel.remove(oContext.getPath(), {
+                success: that._handleSuccessDelete.bind(that),
+                error: that._handleErrorDelete.bind(that),
+              });
+            }
+          },
+        });
+      },
+
+      _handleSuccessDelete: function (params) {
+        MessageToast.show("Registro Excluído com sucesso!");
+        this.onNavBack();
+      },
+      _handleErrorDelete: function (params) {
+		if(params){
+			if(params.responseText){
+				var oErrorMessage = JSON.parse(params.responseText);
+				MessageBox.alert(oErrorMessage.error.message.value);
+			}
+		}
+	  },
     });
   }
 );

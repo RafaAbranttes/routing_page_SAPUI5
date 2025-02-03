@@ -12,6 +12,7 @@
       "TagAttributeLinter": {
         "enabled": false
       },
+      "comma-dangle": ["error", "never"],
       "eventNamingPattern": "",
       "idNamingPattern": ""
     }

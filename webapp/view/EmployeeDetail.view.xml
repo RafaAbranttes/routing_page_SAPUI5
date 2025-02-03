@@ -39,7 +39,8 @@
 			<OverflowToolbar id="_IDGenOverflowToolbar">
 				<ToolbarSpacer id="_IDGenToolbarSpacer">
 				</ToolbarSpacer>
-					<Button id="_IDGenButton" type="Accept" press="onButtonPress" text="Salvar"></Button>
+					<Button id="_IDGenButton" type="Accept" press="onButtonPress" text="Save"></Button>
+					<Button id="_IDGenButton2" type="Reject" press="onButtonPressDelete" text="Delete"></Button>
 			</OverflowToolbar>
 		</footer>
 	</Page>
