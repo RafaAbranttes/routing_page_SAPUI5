@@ -2,7 +2,7 @@ sap.ui.define([
 	"sap/ui/core/mvc/Controller",
     "sap/ui/core/routing/History",
     "sap/ui/core/UIComponent",
-    "project1/controller/Base"
+    "project1/controller/Base.controller"
 ], function(
 	Controller,
 	History,

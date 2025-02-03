@@ -1,6 +1,4 @@
-sap.ui.define([
-  "project1/controller/Base"],
-   (Controller, controller) => {
+sap.ui.define(["project1/controller/Base.controller"], (Controller) => {
   "use strict";
 
   return Controller.extend("project1.controller.View1", {
@@ -9,7 +7,7 @@ sap.ui.define([
     onObjectListItemPress: function (oEvent) {
       var oItem, oCtx;
       oItem = oEvent.getSource();
-      oCtx = oItem.getBindingContext().getPro;
+      oCtx = oItem.getBindingContext();
       this.getRouter().navTo("RouteEmployeeDetail", {
         EmployeeID: oCtx.getProperty("EmployeeID"),
       });

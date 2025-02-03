@@ -1,9 +1,39 @@
 <mvc:View
-	controllerName=""
+	controllerName="project1.controller.EmployeeDetail"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns="sap.m"
 	displayBlock="true"
 	height="100%"
+	xmlns:f="sap.ui.layout.form"
 	busyIndicatorDelay="0"
 >
+	<Page id="pageEmployeeDetaiol"
+		navButtonPress="onNavBack"
+		showNavButton="true"
+	>
+		<VBox id="_IDGenVBox" class="sapUiSmallMargin">
+			<f:SimpleForm id="SimpleFormChange354"
+				editable="true"
+				layout="ResponsiveGridLayout"
+				title="Address"
+				labelSpanXL="3"
+				labelSpanL="3"
+				labelSpanM="3"
+				adjustLabelSpan="false"
+				emptySpanXL="4"
+				emptySpanL="4"
+				emptySpanM="4"
+				columnsXL="1"
+				columnsL="1"
+				singleContainerFullSize="false">
+				<f:content>
+					<Label id="_IDGenLabel" text="Name" />
+					<Input id="name" value="{FirstName}" />
+					<Label id="_IDGenLabel1" text="Job:" />
+					<Input id="_IDGenInput" value="{Title}">
+					</Input>
+				</f:content>
+			</f:SimpleForm>
+		</VBox>
+	</Page>
 </mvc:View>

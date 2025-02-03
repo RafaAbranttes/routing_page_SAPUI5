@@ -1,6 +1,6 @@
 sap.ui.define([
-	"project1.controller.Base",
-    "project1.controller.NotFound"
+	"project1/controller/Base.controller",
+    "project1/controller/NotFound.controller"
 ], function(
 	Controller
 ) {
@@ -11,7 +11,7 @@ sap.ui.define([
 		 * @override
 		 */
 		onInit: function() {
-			Controller.prototype.onInit.apply(this, arguments);
+			
 			
 			
 		}
