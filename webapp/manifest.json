@@ -66,7 +66,12 @@
             "": {
                 "dataSource": "mainService",
                 "preload": true,
-                "settings": {}
+                "settings": {
+                    "defaultBindingMode": "TwoWay",
+                    "defaultOperationMode":  "Service",
+                    "useBatch": true,
+                    "defaultUpdateMethod" : "PUT"
+                }
             }
         },
         "resources": {

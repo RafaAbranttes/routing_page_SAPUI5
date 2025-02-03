@@ -35,5 +35,12 @@
 				</f:content>
 			</f:SimpleForm>
 		</VBox>
+		<footer>
+			<OverflowToolbar id="_IDGenOverflowToolbar">
+				<ToolbarSpacer id="_IDGenToolbarSpacer">
+				</ToolbarSpacer>
+					<Button id="_IDGenButton" type="Accept" press="onButtonPress" text="Salvar"></Button>
+			</OverflowToolbar>
+		</footer>
 	</Page>
 </mvc:View>
